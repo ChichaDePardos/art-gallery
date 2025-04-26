@@ -1,0 +1,77 @@
+/* Estilos principales con prefijo MGA_ */
+.MGA-gallery-container {
+    display: grid;
+    grid-template-columns: repeat(var(--MGA-columns), 1fr);
+    gap: var(--MGA-gutter);
+    padding: var(--MGA-gutter);
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1400px;
+}
+
+.MGA-gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    aspect-ratio: 1/1;
+    transition: all 0.3s ease;
+}
+
+.MGA-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 15px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.MGA-gallery-item:hover .MGA-overlay {
+    transform: translateY(0);
+}
+
+.MGA-title {
+    margin: 0 0 5px 0;
+    font-size: 1.2em;
+}
+
+.MGA-author {
+    margin: 0;
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+/* Media queries responsive */
+@media (max-width: 1024px) {
+    .MGA-gallery-container {
+        --MGA-columns: 3;
+    }
+}
+
+@media (max-width: 768px) {
+    .MGA-gallery-container {
+        --MGA-columns: 2;
+    }
+    
+    .MGA-title {
+        font-size: 1em;
+    }
+    
+    .MGA-author {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    .MGA-gallery-container {
+        --MGA-columns: 1;
+    }
+    
+    .MGA-gallery-item {
+        aspect-ratio: 16/9;
+    }
+}

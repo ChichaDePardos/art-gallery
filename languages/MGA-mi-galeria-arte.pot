@@ -1,0 +1,127 @@
+# Copyright (C) 2023 Tu Nombre
+# This file is distributed under the same license as the Mi Galería de Arte plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Mi Galería de Arte 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-15 12:00+0000\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: includes/class-MGA_Admin_Settings.php:20
+msgid "Constructor de Galería"
+msgstr ""
+
+#: includes/class-MGA_Admin_Settings.php:26
+msgid "Configuración de la Galería"
+msgstr ""
+
+#: includes/class-MGA_Admin_Settings.php:36
+msgid "Añadir Imágenes"
+msgstr ""
+
+#: includes/class-MGA_Admin_Settings.php:39
+msgid "Selecciona las imágenes para tu galería"
+msgstr ""
+
+#: includes/class-MGA_Gallery_Functions.php:19
+msgid "Galerías de Arte"
+msgstr ""
+
+#: includes/class-MGA_Gallery_Functions.php:20
+msgid "Galería de Arte"
+msgstr ""
+
+#: includes/class-MGA_Gallery_Functions.php:21
+msgid "Añadir Nueva"
+msgstr ""
+
+#: includes/class-MGA_Gallery_Functions.php:22
+msgid "Añadir Nueva Galería"
+msgstr ""
+
+#: includes/class-MGA_Gallery_Functions.php:23
+msgid "Nueva Galería"
+msgstr ""
+
+#: includes/class-MGA_Gallery_Functions.php:24
+msgid "Editar Galería"
+msgstr ""
+
+#: includes/class-MGA_Gallery_Functions.php:25
+msgid "Ver Galería"
+msgstr ""
+
+#: includes/class-MGA_Gallery_Functions.php:26
+msgid "Todas las Galerías"
+msgstr ""
+
+#: includes/class-MGA_Gallery_Functions.php:27
+msgid "Buscar Galerías"
+msgstr ""
+
+#: includes/class-MGA_Gallery_Functions.php:28
+msgid "No se encontraron galerías"
+msgstr ""
+
+#: includes/class-MGA_Gallery_Functions.php:29
+msgid "No hay galerías en la papelera"
+msgstr ""
+
+#: includes/class-MGA_Gallery_Functions.php:52
+msgid "Artistas"
+msgstr ""
+
+#: includes/class-MGA_Gallery_Functions.php:62
+msgid "Técnicas"
+msgstr ""
+
+#: includes/class-MGA_Shortcodes.php:18
+msgid "Debes especificar un ID de galería válido"
+msgstr ""
+
+#: includes/class-MGA_Shortcodes.php:47
+msgid "Debes especificar un ID de imagen válido"
+msgstr ""
+
+#: templates/MGA-single-artwork.php:20
+msgid "Por:"
+msgstr ""
+
+#: templates/MGA-single-artwork.php:32
+msgid "Técnica:"
+msgstr ""
+
+#: templates/MGA-gallery-template.php:20
+msgid "No hay imágenes para mostrar."
+msgstr ""
+
+#: templates/MGA-gallery-template.php:25
+msgid "Ver %s en tamaño completo"
+msgstr ""
+
+#: includes/class-MGA_Ajax_Handlers.php:18
+msgid "No tienes permisos suficientes"
+msgstr ""
+
+#: includes/class-MGA_Ajax_Handlers.php:28
+msgid "ID de imagen no válido"
+msgstr ""
+
+#: includes/class-MGA_Ajax_Handlers.php:34
+msgid "Imagen no encontrada"
+msgstr ""
+
+#: includes/class-MGA_Ajax_Handlers.php:56
+msgid "Nonce de seguridad no válido"
+msgstr ""
+
+#: includes/class-MGA_Ajax_Handlers.php:72
+msgid "Metadatos guardados correctamente"
+msgstr ""

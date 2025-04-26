@@ -1,0 +1,219 @@
+/* Estilos generales del admin con prefijo MGA_ */
+.MGA-gallery-builder-container {
+    padding: 20px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.MGA-uploader-container {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f9f9f9;
+    border: 1px dashed #ddd;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.MGA-gallery-preview {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.MGA-gallery-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.MGA-gallery-item:hover {
+    border-color: #999;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.MGA-image-preview {
+    position: relative;
+    margin-bottom: 15px;
+    background: #f5f5f5;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.MGA-image-preview img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+.MGA-remove-image {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 24px;
+    height: 24px;
+    background: #d63638;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.MGA-gallery-item:hover .MGA-remove-image {
+    opacity: 1;
+}
+
+.MGA-remove-image:hover {
+    background: #aa2e2e;
+}
+
+.MGA-remove-image:before {
+    font-family: dashicons;
+    content: "\f182";
+    font-size: 14px;
+}
+
+.MGA-image-details {
+    padding: 0 5px;
+}
+
+.MGA-form-group {
+    margin-bottom: 15px;
+}
+
+.MGA-form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #1d2327;
+    font-size: 13px;
+}
+
+.MGA-form-group input[type="text"],
+.MGA-form-group textarea,
+.MGA-form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.07);
+    transition: border-color 0.3s ease;
+    font-size: 13px;
+}
+
+.MGA-form-group input[type="text"]:focus,
+.MGA-form-group textarea:focus,
+.MGA-form-group select:focus {
+    border-color: #2271b1;
+    box-shadow: 0 0 0 1px #2271b1;
+    outline: none;
+}
+
+.MGA-form-group textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.MGA-form-group input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+/* Estilos para el área de configuración */
+.MGA-settings-container {
+    padding: 10px 0;
+}
+
+.MGA-settings-container .MGA-form-group {
+    margin-bottom: 12px;
+}
+
+.MGA-settings-container select,
+.MGA-settings-container input[type="number"],
+.MGA-settings-container input[type="text"] {
+    width: 100%;
+    padding: 6px 8px;
+}
+
+.MGA-settings-container h4 {
+    margin: 20px 0 10px;
+    padding: 0;
+    font-size: 14px;
+    color: #1d2327;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+/* Placeholder para el sortable */
+.MGA-sortable-placeholder {
+    background: #f0f0f1;
+    border: 2px dashed #c3c4c7;
+    border-radius: 4px;
+    height: 100px;
+}
+
+/* Estilos para la vista responsive en admin */
+@media (max-width: 1024px) {
+    .MGA-gallery-preview {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 782px) {
+    .MGA-gallery-preview {
+        grid-template-columns: 1fr;
+    }
+    
+    .MGA-gallery-item {
+        padding: 10px;
+    }
+}
+
+/* Estilos para los mensajes de error/éxito */
+.MGA-notice {
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 3px;
+    border-left: 4px solid;
+}
+
+.MGA-notice-success {
+    background-color: #f0f7f0;
+    border-left-color: #46b450;
+    color: #1e561f;
+}
+
+.MGA-notice-error {
+    background-color: #f7f0f0;
+    border-left-color: #dc3232;
+    color: #761919;
+}
+
+/* Estilos para el loading */
+.MGA-loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(0,0,0,0.1);
+    border-radius: 50%;
+    border-top-color: #2271b1;
+    animation: MGA-spin 1s ease-in-out infinite;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+@keyframes MGA-spin {
+    to { transform: rotate(360deg); }
+}

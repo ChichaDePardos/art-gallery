@@ -2,119 +2,130 @@
 
 ![Plugin Version](https://img.shields.io/badge/version-1.0-blue) 
 ![WordPress Version](https://img.shields.io/badge/WordPress-5.0%2B-brightgreen) 
-![License](https://img.shields.io/badge/license-Privada-red)
+![PHP Version](https://img.shields.io/badge/PHP-7.4%2B-purple)
+![License](https://img.shields.io/badge/license-GPLv3-blue)
 
-Un plugin WordPress para crear hermosas galerías de arte con diseño responsive y efectos hover que muestran información de las obras.
+Un plugin WordPress profesional para crear galerías de arte con diseño responsive, efectos hover y máxima compatibilidad.
 
 ![Captura de pantalla de la galería](assets/images/screenshot.png)
 
 ## Características principales
 
-✅ **Diseño responsive** – Se adapta perfectamente a móviles, tablets y desktop  
-✅ **Efectos hover elegantes** – Muestra título, autor y detalles al pasar el cursor  
-✅ **Múltiples layouts** – Diseños en mosaico, grid y masonry  
-✅ **Lightbox integrado** – Visualización a pantalla completa de las obras  
-✅ **Gestión sencilla** – Interfaz intuitiva en el panel de administración  
-✅ **Shortcodes** – Fácil inserción en cualquier página/post  
-✅ **Optimizado para SEO** – Metadatos y marcado semántico para mejor indexación  
+✅ **Diseño completamente responsive** - Adaptación perfecta a todos los dispositivos  
+✅ **Efectos hover personalizables** - Muestra título, autor y detalles con animaciones CSS3  
+✅ **Múltiples layouts** - Grid, Masonry y Mosaico con CSS Grid  
+✅ **Lightbox integrado** - Compatible con las principales librerías  
+✅ **Prefijo MGA_** - Total compatibilidad con otros plugins  
+✅ **Shortcodes avanzados** - Más de 10 parámetros configurables  
+✅ **Optimización SEO** - Schema markup para obras de arte  
+✅ **WP-CLI support** - Comandos para gestión masiva  
 
 ## Requisitos técnicos
 
-- WordPress 5.0 o superior
-- PHP 7.4 o superior
-- MySQL 5.6 o superior
+- WordPress 5.6+
+- PHP 7.4+ (recomendado 8.0+)
+- MySQL 5.7+ o MariaDB 10.3+
+- Soporte para JavaScript moderno (ES6+)
 
 ## Instalación
 
-1. Descarga el archivo ZIP del plugin
-2. Ve a tu panel de WordPress: `Plugins > Añadir nuevo > Subir plugin`
-3. Selecciona el archivo ZIP y haz clic en "Instalar ahora"
-4. Activa el plugin a través del menú 'Plugins' en WordPress
+### Método 1: Desde WordPress
+1. Descarga el [paquete ZIP](https://tudominio.com/mi-galeria-arte.zip)
+2. Ve a `Plugins > Añadir nuevo > Subir plugin`
+3. Sube el archivo ZIP y activa el plugin
+
+### Método 2: Vía CLI
+```bash
+wp plugin install https://tudominio.com/mi-galeria-arte.zip --activate
+```
 
 ## Uso básico
 
-1. Ve a `Galerías de Arte > Añadir nueva` en tu panel de WordPress
-2. Añade imágenes y completa la información de cada obra (título, autor, etc.)
-3. Configura las opciones de visualización según tus preferencias
-4. Inserta la galería en cualquier página/post usando el shortcode:
-
+1. Crea una nueva galería en `Galerías de Arte > Añadir nueva`
+2. Configura los ajustes responsive y efectos hover
+3. Inserta con shortcode:  
    ```html
-   [mi_galeria_arte id="X"]
+   [MGA_galeria_arte id="123" layout="masonry" columns="4"]
    ```
-   (Reemplaza "X" con el ID de tu galería)
 
-## Personalización avanzada
+## Shortcodes avanzados
 
-### Atributos del shortcode
+### Parámetros principales:
 
-| Atributo       | Descripción                              | Valores aceptados        | Por defecto |
-|----------------|------------------------------------------|---------------------------|-------------|
-| `id`           | ID de la galería                         | Número entero              | Requerido   |
-| `columns`      | Número de columnas                       | 1-6                        | 4           |
-| `gutter`       | Espacio entre imágenes                   | Valor CSS (ej. "15px")     | "15px"      |
-| `lightbox`     | Activar lightbox                         | true / false               | true        |
-| `lazy_load`    | Carga diferida de imágenes               | true / false               | true        |
-| `hover_effect` | Efecto al pasar el cursor                | fade / slide-up / zoom     | fade        |
+| Atributo        | Valores                    | Default | Descripción |
+|-----------------|----------------------------|---------|-------------|
+| `id`            | ID de galería              | -       | Requerido   |
+| `layout`        | grid, masonry, mosaic      | grid    | Tipo de layout |
+| `columns`       | 1-6                        | 4       | Columnas en desktop |
+| `hover_effect`  | fade, slide, zoom, flip    | fade    | Efecto hover |
 
-### Ejemplos de shortcode
+### Ejemplos:
 
 ```html
-[mi_galeria_arte id="5" columns="3" gutter="10px" hover_effect="zoom"]
+[MGA_galeria_arte id="5" layout="masonry" hover_effect="zoom"]
 
-[mi_galeria_arte id="8" columns="2" lightbox="false"]
+[MGA_obra_arte id="42" size="large" show_author="false"]
 ```
 
-## Hooks y filtros
+## API para desarrolladores
 
-El plugin incluye varios hooks para desarrolladores:
+### Hooks disponibles:
 
 ```php
-// Modificar los argumentos de la galería antes de renderizar
-add_filter('mga_gallery_args', function($args) {
-    $args['columns'] = 3;
-    return $args;
-});
+// Filtro para modificar las imágenes
+add_filter('MGA_gallery_images', function($images, $gallery_id) {
+    return $images;
+}, 10, 2);
 
-// Añadir contenido adicional después de la galería
-add_action('mga_after_gallery', function($gallery_id) {
-    echo '<div class="mga-credits">Galería creada con Mi Galería de Arte</div>';
-});
+// Acción después del render
+add_action('MGA_after_render', function($gallery_html, $args) {
+}, 10, 2);
+```
+
+### WP-CLI Commands:
+```bash
+wp mga import-csv /path/to/artworks.csv
+wp mga regenerate-thumbnails --gallery-id=123
 ```
 
 ## Soporte técnico
 
-Si encuentras algún problema o tienes preguntas:
+- 📌 [Reportar issues](https://github.com/ChichaDePardos/art-gallery/issues)
 
-1. Revisa la [sección de issues](https://github.com/tuusuario/mi-galeria-arte/issues) en GitHub
-2. Abre un nuevo issue si no encuentras solución
-3. Para soporte prioritario, contacta a soporte@tudominio.com
+## Roadmap 2024
+
+- 🚀 Integración con WooCommerce (Q1)
+- 📱 App móvil para gestión (Q2)
+- 🖼️ Soporte para realidad aumentada (Q3)
+- 🌐 Traducciones multidioma (Q4)
 
 ## Contribuciones
 
-¡Las contribuciones son bienvenidas! Por favor:
-
-1. Haz fork del repositorio
-2. Crea una rama para tu feature (`git checkout -b feature/awesome-feature`)
-3. Haz commit de tus cambios (`git commit -am 'Add awesome feature'`)
-4. Haz push a la rama (`git push origin feature/awesome-feature`)
-5. Abre un Pull Request
+Seguimos las mejores prácticas de WordPress:
+1. Fork del repositorio
+2. Crea una feature branch (`git checkout -b feature/nueva-funcionalidad`)
+3. Commit con estándares WP (`git commit -m "Nueva funcionalidad: Breve descripción"`)
+4. Push a la rama (`git push origin feature/nueva-funcionalidad`)
+5. Abre un Pull Request detallado
 
 ## Licencia
 
-Este plugin es de **licencia privada**.  
-Queda **prohibida** su copia, redistribución o modificación sin autorización expresa del autor.
+Licenciado bajo GPLv3. Libre uso, modificación y distribución siguiendo los términos de la licencia.
 
 ## Changelog
 
-### 1.0 – 2023-11-15
-- Versión inicial del plugin
-- Funcionalidad básica de galerías
-- Efectos hover y lightbox
-- Soporte responsive
+### 1.0.1 - 2023-12-01
+- 🐛 Corregido conflicto con plugins de caché
+- ✨ Añadido soporte para WebP
+- 🌍 Mejorada internacionalización
 
-## Créditos
+### 1.0.0 - 2023-11-15
+- Versión inicial estable
+- Todos los features básicos implementados
+- Documentación completa
 
-Desarrollado con ❤️ por ChichadePardos
+## Equipo
+
+Desarrollado por [ChichaDePardos](https://github.com/ChichaDePardos)
 
 ---
-```
