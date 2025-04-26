@@ -217,7 +217,7 @@ class MGA_Admin_Settings {
         
         if (!empty($data['settings']) && is_array($data['settings'])) {
             $sanitized['settings'] = array(
-                'columns' => min(max(absint($data['settings']['columns'] ?? 4), 12),
+                'columns' => min(max(absint($data['settings']['columns'] ?? 4), 12), 6),
                 'gutter' => sanitize_text_field($data['settings']['gutter'] ?? '15px'),
                 'lightbox' => !empty($data['settings']['lightbox']),
                 'lazy_load' => !empty($data['settings']['lazy_load']),
